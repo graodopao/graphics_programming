@@ -1,0 +1,16 @@
+// This file was written following the tutorial at learnopengl.com
+#version 460 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aColor;
+
+uniform float horizontalOffset;
+out vec4 vertexPosition;
+out vec3 ourColor;
+
+void main()
+{
+	gl_Position = vec4(aPos.x + horizontalOffset, -aPos.y, aPos.z, 1.0);
+	
+	vertexPosition = gl_Position;
+	ourColor = aColor;
+}
